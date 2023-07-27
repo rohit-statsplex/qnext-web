@@ -1,5 +1,6 @@
 import "./globals.css";
 import { IBM_Plex_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -19,7 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexMono.variable} font-mono`}>{children}</body>
+      <body className={`${ibmPlexMono.variable} font-mono`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
