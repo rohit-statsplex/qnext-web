@@ -718,10 +718,10 @@ const HomeBody = () => {
         </div>
       </section>
       <section>
-        <div className="container  m-auto flex justify-center">
+        <div className="container m-auto flex justify-center">
           <Image src={"/dot_separator.svg"} alt={""} width={1022} height={40} />
         </div>
-        <div className="container  m-auto text-center text-4xl">
+        <div className="container m-auto text-center text-4xl">
           the future of Newsletters is here. where are you?
         </div>
       </section>
