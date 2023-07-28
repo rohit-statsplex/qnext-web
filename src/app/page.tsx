@@ -475,13 +475,13 @@ const HomeBody = () => {
       )}
       <section>
         {/* craft disruptive */}
-        <div className="container m -auto">
+        <div className="container m-auto">
           <div className="bg-polka pb-12">
             <div className="flex ml-16 pt-24">
               <div>
                 <h1 className="whitespace-nowrap text-[40px]">
                   craft
-                  <span className="italic">
+                  <span className="italic pl-4">
                     <b>disruptive</b> <br />
                   </span>
                   newsletters <br /> effortlessly
