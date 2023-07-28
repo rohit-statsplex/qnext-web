@@ -63,7 +63,7 @@ const HomeHeader = () => {
                 </a>
               </li>
               <li>
-                <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
+                <Button className="hl whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
                   Our Newsletter
                 </Button>
               </li>
