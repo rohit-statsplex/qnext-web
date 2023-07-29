@@ -63,9 +63,11 @@ const HomeHeader = () => {
                 </a>
               </li>
               <li>
-                <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
-                  Our Newsletter
-                </Button>
+                <a href="/news-letter">
+                  <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
+                    Our Newsletter
+                  </Button>
+                </a>
               </li>
               <li>
                 <Button
@@ -81,7 +83,30 @@ const HomeHeader = () => {
       </div>
       {showDemoForm && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-10 rounded-lg h-[37.5rem] w-[52rem] grid justify-items-center">
+          <div className="bg-white p-10 rounded-lg h-[37.5rem] w-[52rem] grid justify-items-center relative">
+            <div className="absolute top-2 right-2">
+              <button
+                type="button"
+                onClick={() => setShowDemoForm(false)}
+                className="text-gray-500 mr-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M5 5L19 19M5 19L19 5"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
             <h2 className="text-2xl font-semibold flex justify-center text-center">
               Kindly enter your details to get a demo of the Newsletter Builder.
             </h2>
@@ -116,15 +141,6 @@ const HomeHeader = () => {
             >
               {loading ? <Loader2 className="animate-spin" /> : "Get a Demo"}
             </Button>
-            <div className="">
-              <button
-                type="button"
-                onClick={() => setShowDemoForm(false)}
-                className="text-gray-500 mr-2"
-              >
-                Cancel
-              </button>
-            </div>
           </div>
         </div>
       )}
@@ -158,7 +174,6 @@ const pricingData = [
     description: "Customization\nOptions\n\nhuman in loop\nmonitor",
   },
 ];
-
 const HomePricing = ({ tier, cost, description, points }: pricingProps) => {
   return (
     <div className=" bg-[#F2F7F2] px-14 py-8 rounded-[36px] border-black border-solid border-2 w-[298px] h-[424px]">

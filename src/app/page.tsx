@@ -81,7 +81,30 @@ const HomeHeader = () => {
       </div>
       {showDemoForm && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-10 rounded-lg h-[37.5rem] w-[52rem] grid justify-items-center">
+          <div className="bg-white p-10 rounded-lg h-[37.5rem] w-[52rem] grid justify-items-center relative">
+            <div className="absolute top-2 right-2">
+              <button
+                type="button"
+                onClick={() => setShowDemoForm(false)}
+                className="text-gray-500 mr-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M5 5L19 19M5 19L19 5"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
             <h2 className="text-2xl font-semibold flex justify-center text-center">
               Kindly enter your details to get a demo of the Newsletter Builder.
             </h2>
@@ -116,15 +139,6 @@ const HomeHeader = () => {
             >
               {loading ? <Loader2 className="animate-spin" /> : "Get a Demo"}
             </Button>
-            <div className="">
-              <button
-                type="button"
-                onClick={() => setShowDemoForm(false)}
-                className="text-gray-500 mr-2"
-              >
-                Cancel
-              </button>
-            </div>
           </div>
         </div>
       )}
@@ -181,35 +195,6 @@ const expandlesData = [
   {
     title: "iterative",
     description: "improve content based on audience reaction.",
-  },
-];
-
-const featuresData = [
-  {
-    title: "Cater to an audience",
-    description:
-      "Speak to your\naudience directly by\nfine-tuning the\nlanguage in-line with\nwhat your audience\nlikes and vibes with.",
-    description2:
-      "\nChange the ‘tone’ of\nvoice depending upon\nthe psychography of the\nperson reading the\nNewsletter.",
-  },
-  {
-    title: "Geography specific content",
-    description:
-      "Cater to local tastes\nby targeting according\nto the location of the audience.",
-  },
-  {
-    title: "Hallucination elimination",
-    description: "No hallucinations in\nthe Generative AI\ncontent.",
-  },
-  {
-    title: "Automation",
-    description:
-      "All the functions\nhappen with a press of\na button and you can generate the Newsletter automatically.",
-  },
-  {
-    title: "Human in Loop",
-    description:
-      "Editor mode allows a\nhuman being to make\nchanges and\neditorialize and\napprove the Newsletter\nbefore the\npublication.",
   },
 ];
 
@@ -281,30 +266,6 @@ const productData = [
       "Create a quiz out\nof an article or\nthe latest\ntrending news to\nbetter engagement\non your website.",
   },
 ];
-
-const HomeFeatures = ({ index, title, desc1, desc2 }: featuresProps) => {
-  return (
-    <div
-      className="text-2xl"
-      style={{ gridRow: `${index === 0 ? "1 / span 2" : ""}` }}
-    >
-      {title} <br />
-      <div className="flex my-4">
-        <Image
-          src={"/bullet2.png"}
-          alt=""
-          width={20}
-          height={20}
-          className="h-min relative top-2 right-2"
-        />
-        <span className="font-light whitespace-pre-wrap">{desc1}</span>
-      </div>
-      <span className="relative -top-4 font-light whitespace-pre-wrap">
-        {desc2}
-      </span>
-    </div>
-  );
-};
 
 const HomeExpandables = ({ title, description, index }: expandablesProps) => {
   // const [isExpanded, setIsExpanded] = useState(false);
@@ -687,7 +648,6 @@ const HomeBody = () => {
           </div>
         </div>
       </section>
-
       <section>
         <div className="container m-auto">
           <div className="flex justify-between px-12 text-4xl">
@@ -762,7 +722,7 @@ const HomeBody = () => {
 
       <section className="p-8 container">
         <div className="text-center text-4xl py-8">Twitter Feeds</div>
-        <div className="bg-blue-400 py-8 px-48 overflow-auto h-[27rem] mx-16 rounded-2xl border-slate-200 border">
+        <div className="bg-twitter py-8 px-48 overflow-auto h-[27rem] mx-16 rounded-2xl border-slate-200 border">
           <a
             className="twitter-timeline"
             href="https://twitter.com/QNext_ai?ref_src=twsrc%5Etfw"

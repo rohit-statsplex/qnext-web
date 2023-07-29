@@ -11,10 +11,11 @@ module.exports = {
       },
     },
     extend: {
-      fontFamily:{
-        mono: ['var(--font-ibm)']
+      fontFamily: {
+        mono: ["var(--font-ibm)"],
       },
       colors: {
+        twitter: "#F2F7F2",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
