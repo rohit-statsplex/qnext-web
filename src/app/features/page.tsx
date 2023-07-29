@@ -338,7 +338,7 @@ const HomeBody = () => {
             all-encompassing summary.
           </div>
           <Image
-            src={"/rectangle-53.png"}
+            src={"/SoS.svg"}
             alt={""}
             width={808}
             height={428}
