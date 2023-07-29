@@ -294,7 +294,7 @@ const HomeBody = () => {
       </section>
 
       <section className="m-auto container">
-        <h2 className="text-2xl flex font-bold m-auto p-16">
+        <h2 className="text-2xl flex font-bold m-auto px-16">
           Cliffhanger
           <div className="text-2xl mx-28 max-w-[344px] font-light">
             Keep your audience hanging by every word with these intense

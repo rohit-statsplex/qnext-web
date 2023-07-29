@@ -119,7 +119,6 @@ const HomeHeader = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 ></Input>
               </div>
-
               <div className="flex">
                 <div className="relative top-6 text-2xl font-semibold  mr-12">
                   Message
@@ -130,7 +129,6 @@ const HomeHeader = () => {
                 ></Textarea>
               </div>
             </form>
-
             <Button
               type="submit"
               className="w-48 whitespace-nowrap my-4 text-xl"
@@ -398,6 +396,7 @@ const HomeBody = () => {
       {showSignUpForm && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-10 rounded-lg h-80 w-[52rem] grid justify-items-center">
+            
             <h2 className="text-2xl font-semibold flex justify-center">
               Sign Up for More Updates
             </h2>
@@ -456,7 +455,7 @@ const HomeBody = () => {
       </section>
 
       <section>
-        <div className="container  m-auto">
+        <div className="container m-auto">
           <div
             className="grid mx-auto"
             style={{ gridTemplateAreas: "'item0 item1 .' '. item2 item3'" }}
