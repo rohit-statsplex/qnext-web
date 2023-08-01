@@ -1,0 +1,20 @@
+.border-b-1 {
+  border-bottom-width: 0.75px;
+}
+
+li > ul {
+  transform: translatex(100%) scale(0);
+}
+li:hover > ul {
+  transform: translatex(101%) scale(1);
+  z-index: 100000;
+}
+/* li > button svg {
+      transform: rotate(-90deg);
+    } */
+li > button svg {
+  transform: rotate(270deg);
+}
+a:hover > button svg {
+  transform: rotate(-270deg);
+}
