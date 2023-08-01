@@ -2,7 +2,8 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
+// import { Header } from "./common/header";
+import { Navbar } from "./common/Navbar";
 import Image from "next/image";
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
@@ -13,6 +14,8 @@ export default function Home() {
   return (
     <>
       <HomeHeader />
+      <Navbar />
+      {/* <Header /> */}
       <HomeBody />
     </>
   );
@@ -43,11 +46,11 @@ const HomeHeader = () => {
   };
   return (
     <header>
-      <div className="flex justify-between">
+      <div className="md:flex justify-between hidden">
         <Image src="/logo.svg" alt="QNEXT.AI" width={150} height={150} />
-        <div className="py-12 h-min mr-12">
+        <div className="py-12 h-min 2xl:mr-12">
           <nav>
-            <ul className="flex gap-x-14 ">
+            <ul className="flex 2xl:gap-x-14 hl mr-4">
               <li>
                 <a href="/">
                   <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
@@ -446,13 +449,13 @@ const HomeBody = () => {
       )}
       <section>
         {/* craft disruptive */}
-        <div className="container m -auto">
+        <div className="container m-auto">
           <div className="bg-polka pb-12">
-            <div className="flex ml-16 pt-24">
+            <div className="flex 2xl:ml-16 pt-0 2xl:pt-24 ">
               <div>
                 <h1 className="whitespace-nowrap text-[40px]">
                   craft
-                  <span className="italic">
+                  <span className="italic pl-4">
                     <b>disruptive</b> <br />
                   </span>
                   newsletters <br /> effortlessly
@@ -731,7 +734,7 @@ const HomeBody = () => {
         </div>
       </section>
 
-      <section className="p-8 container">
+      {/* <section className="p-8 container">
         <div className="text-center text-4xl py-8">Twitter Feeds</div>
         <div className="bg-twitter py-8 px-48 overflow-auto h-[27rem] mx-16 rounded-2xl border-slate-200 border">
           <a
@@ -742,7 +745,7 @@ const HomeBody = () => {
           </a>
           <script async src="https://platform.twitter.com/widgets.js"></script>
         </div>
-      </section>
+      </section> */}
       <footer>
         <div className="py-16 flex justify-around">
           <a href="/about">About Us</a>
