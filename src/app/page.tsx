@@ -442,8 +442,8 @@ const HomeBody = () => {
         <div className="md:container m-auto">
           <div className="bg-polka pb-12">
             <div className="md:flex 2xl:ml-16 pt-0 2xl:pt-24 ">
-              <div className="px-8 md:p-0">
-                <h1 className="whitespace-nowrap text-[40px]">
+              <div className="px-8 md:px-8 text-center md:text-inherit">
+              <h1 className="whitespace-nowrap text-2xl md:text-[40px]">
                   craft
                   <span className="italic pl-4">
                     <b>disruptive</b> <br />
@@ -496,12 +496,14 @@ const HomeBody = () => {
                 className=""
               />
             </div>
-            <div className="md:text-4xl right-p my-auto text-center py-4 md:py-0">
+            <div className="md:text-4xl right-p my-auto text-left md:text-inherit py-4  md:py-0">
               <span>
                 unleash the power
-                <br />
+                {/* <div className="hidden md:block"> */}
+                  <br />
+                {/* </div> */}
                 of Generative AI <br />
-                <div className="md:ml-36">
+                <div className="md:ml-36 text-center md:text-inherit">
                   <span className="md:text-[32px] italic font-medium">
                     for your
                     <br />
@@ -526,7 +528,7 @@ const HomeBody = () => {
           <div className="md:text-4xl text-xl text-center font-mono p-4 md:p-0">
             What does Generative-AI do for your Newsletter?
           </div>
-          <div className="grid md:grid-cols-3 grid-cols-2 md:grid-rows-2 md:gap-2 justify-items-center md:p-12">
+          <div className="grid md:grid-cols-3 md:grid-rows-2 md:gap-2 justify-items-center md:p-12">
             <div className="md:row-span-3 md:col-span-1 col-span-2">
               <div className="md:text-2xl ">
                 Cater to an audience
@@ -537,7 +539,7 @@ const HomeBody = () => {
                     alt="bullet point image"
                     width={20}
                     height={20}
-                    className="h-min relative top-2 right-2"
+                    className="h-min relative top-2 right-2 hidden"
                   />
                   <span className="font-light whitespace-pre-wrap">
                     Speak to your <br /> audience directly by <br /> fine-tuning
@@ -560,11 +562,11 @@ const HomeBody = () => {
                 </div>
               </div>
             </div>
-            <div className="p-2 md:p-0">
+            <div className="p-2 md:p-0 md:row-span-3 md:col-span-1 col-span-2">
               <div className="md:text-2xl">
                 Geography specific content
                 <br />
-                <div className="flex my-4">
+                <div className="flex md:my-4">
                   <Image
                     src={"/bullet2.png"}
                     alt=""
@@ -572,7 +574,7 @@ const HomeBody = () => {
                     height={20}
                     className="h-min relative md:top-2 top-4 md:right-2"
                   />
-                  <span className="font-light whitespace-pre-wrap p-2 md:p-initial">
+                  <span className="font-light whitespace-pre-wrap md:p-2 md:p-initial">
                     Cater to local tastes
                     <br />
                     by targeting according
@@ -582,11 +584,11 @@ const HomeBody = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="p-2 md:p-0 md:row-span-3 md:col-span-1 col-span-2">
               <div className="md:text-2xl p-2 md:p-0">
                 Hallucination elimination
                 <br />
-                <div className="flex my-4">
+                <div className="flex md:my-4">
                   <Image
                     src={"/bullet2.png"}
                     alt=""
@@ -604,11 +606,11 @@ const HomeBody = () => {
                 </div>
               </div>
             </div>
-            <div>
-              <div className="md:text-2xl ">
+            <div className="p-2 md:p-0 md:row-span-3 md:col-span-1 col-span-2">
+              <div className="md:text-2xl px-16 md:px-0">
                 Automation
                 <br />
-                <div className="flex my-4">
+                <div className="flex md:my-4">
                   <Image
                     src={"/bullet2.png"}
                     alt=""
@@ -630,7 +632,7 @@ const HomeBody = () => {
               <div className="md:text-2xl">
                 Human in Loop
                 <br />
-                <div className="flex my-4">
+                <div className="flex md:my-4">
                   <Image
                     src={"/bullet2.png"}
                     alt=""
