@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-// import { Header } from "./common/header";
 import { Navbar } from "./common/Navbar";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -15,7 +14,6 @@ export default function Home() {
     <>
       <HomeHeader />
       <Navbar />
-      {/* <Header /> */}
       <HomeBody />
     </>
   );
@@ -50,7 +48,7 @@ const HomeHeader = () => {
         <Image src="/logo.svg" alt="QNEXT.AI" width={150} height={150} />
         <div className="py-12 h-min 2xl:mr-12">
           <nav>
-            <ul className="flex 2xl:gap-x-14 hl mr-4">
+            <ul className="flex 2xl:gap-x-14 mr-4">
               <li>
                 <a href="/">
                   <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
@@ -152,14 +150,6 @@ interface expandablesProps {
   title: string;
   description: string;
 }
-
-interface featuresProps {
-  index: number;
-  title: string;
-  desc1: string;
-  desc2?: string;
-}
-
 interface elementsProps {
   index: number;
   title: string;
@@ -449,10 +439,10 @@ const HomeBody = () => {
       )}
       <section>
         {/* craft disruptive */}
-        <div className="container m-auto">
+        <div className="md:container m-auto">
           <div className="bg-polka pb-12">
-            <div className="flex 2xl:ml-16 pt-0 2xl:pt-24 ">
-              <div>
+            <div className="md:flex 2xl:ml-16 pt-0 2xl:pt-24 ">
+              <div className="p-8 md:p-0">
                 <h1 className="whitespace-nowrap text-[40px]">
                   craft
                   <span className="italic pl-4">
@@ -462,7 +452,7 @@ const HomeBody = () => {
                 </h1>
               </div>
               <div className="ml-auto">
-                <Image src={"/video.svg"} alt={""} width={734} height={434} />
+                <Image src={"/video.svg"} alt={""} width={734} height={434}  className="px-8 py-4"/>
               </div>
             </div>
           </div>
@@ -472,7 +462,7 @@ const HomeBody = () => {
       <section>
         <div className="container m-auto">
           <div
-            className="grid mx-auto"
+            className="md:grid mx-auto hidden"
             style={{ gridTemplateAreas: "'item0 item1 .' '. item2 item3'" }}
           >
             {expandlesData.map((ele, i) => (
@@ -489,9 +479,9 @@ const HomeBody = () => {
 
       <section>
         {/* unleash the power */}
-        <div className="container m-auto p-20">
+        <div className="container m-auto md:py-20 md:px-4">
           <div className="flex justify-around m-auto">
-            <div className="left-p m-auto">
+            <div className="left-p m-auto ">
               <Image
                 src={"/Infographic.png"}
                 alt={""}
@@ -500,12 +490,12 @@ const HomeBody = () => {
                 className=""
               />
             </div>
-            <div className="text-4xl right-p m-auto ">
+            <div className="text-4xl right-p my-auto">
               <span>
                 unleash the power
                 <br />
                 of Generative AI <br />
-                <div className="ml-36">
+                <div className="md:ml-36">
                   <span className="text-[32px] italic font-medium">
                     for your
                     <br />
@@ -518,7 +508,7 @@ const HomeBody = () => {
                 alt={"background image"}
                 width={120}
                 height={120}
-                className="ml-auto pt-44"
+                className="ml-auto md:pt-44"
               />
             </div>
           </div>
@@ -734,7 +724,7 @@ const HomeBody = () => {
         </div>
       </section>
 
-      {/* <section className="p-8 container">
+      <section className="p-8 container">
         <div className="text-center text-4xl py-8">Twitter Feeds</div>
         <div className="bg-twitter py-8 px-48 overflow-auto h-[27rem] mx-16 rounded-2xl border-slate-200 border">
           <a
@@ -745,7 +735,7 @@ const HomeBody = () => {
           </a>
           <script async src="https://platform.twitter.com/widgets.js"></script>
         </div>
-      </section> */}
+      </section>
       <footer>
         <div className="py-16 flex justify-around">
           <a href="/about">About Us</a>

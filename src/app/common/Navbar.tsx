@@ -1,23 +1,28 @@
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="border-bottom  md:hidden">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-between h-16">
+    <nav className="hl  md:hidden">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 border-b-indigo-500">
+        <div className="relative flex items-center justify-between h-28">
           <div className="flex-shrink-0 flex items-center">
-            <img
-              className="block lg:hidden h-8 w-auto"
-              src="/images/logo.svg"
-              alt="Workflow logo"
+            <Image
+              src="/logo.svg"
+              alt="QNEXT.AI"
+              width={100}
+              height={100}
+              className="md:hidden"
             />
-            <img
-              className="hidden lg:block h-8 w-auto"
-              src="/images/logo.svg"
-              alt="Workflow logo"
+            <Image
+              src="/logo.svg"
+              alt="QNEXT.AI"
+              width={150}
+              height={150}
+              className="md:block hidden"
             />
           </div>
           <div className="hidden md:block">
@@ -30,7 +35,7 @@ export const Navbar = () => {
           <div className="-mr-2 flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400  hover:bg-gray-200"
             >
               <span className="sr-only">Open main menu</span>
               <svg

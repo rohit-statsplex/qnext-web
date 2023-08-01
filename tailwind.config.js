@@ -19,6 +19,7 @@ module.exports = {
         mono: ["var(--font-ibm)"],
       },
       colors: {
+        qnext: "#FCFCFC",
         twitter: "#F2F7F2",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
