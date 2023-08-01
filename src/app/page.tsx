@@ -522,12 +522,12 @@ const HomeBody = () => {
       </section>
 
       <section>
-        <div className="md:container m-auto md:pt-16">
-          <div className="md:text-4xl text-xl text-center font-mono">
+        <div className="md:container m-auto md:pt-8">
+          <div className="md:text-4xl text-xl text-center font-mono p-4 md:p-0">
             What does Generative-AI do for your Newsletter?
           </div>
-          <div className="grid md:grid-cols-3 grid-cols-2 hl md:grid-rows-2 md:gap-2 justify-items-center md:p-12">
-            <div className="md:row-span-3 col-span-2">
+          <div className="grid md:grid-cols-3 grid-cols-2 md:grid-rows-2 md:gap-2 justify-items-center md:p-12">
+            <div className="md:row-span-3 md:col-span-1 col-span-2">
               <div className="md:text-2xl ">
                 Cater to an audience
                 <br />
@@ -570,9 +570,9 @@ const HomeBody = () => {
                     alt=""
                     width={20}
                     height={20}
-                    className="h-min relative top-2 right-2"
+                    className="h-min relative md:top-2 top-4 md:right-2"
                   />
-                  <span className="font-light whitespace-pre-wrap">
+                  <span className="font-light whitespace-pre-wrap p-2 md:p-initial">
                     Cater to local tastes
                     <br />
                     by targeting according
@@ -659,10 +659,12 @@ const HomeBody = () => {
         </div>
       </section>
       <section>
-        <div className="container m-auto">
-          <div className="flex justify-between md:px-12 md:text-4xl">
+        <div className="md:container m-auto">
+          <div className="flex justify-between md:px-12 md:text-4xl text-center md:text-inherit">
             <Image src={"/dot-grid.svg"} alt={""} width={120} height={120} />
-            <span className="py-6">Generative-AI elements</span>
+            <span className="py-6 text-center md:text-left">
+              Generative-AI elements
+            </span>
             <Image
               src={"/dot-grid.svg"}
               alt={""}
