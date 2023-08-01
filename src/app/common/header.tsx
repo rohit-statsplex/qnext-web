@@ -8,7 +8,7 @@ export function Header() {
           <img
             src="/logo.svg"
             className="mr-3 h-20 py-2 sm:h-full"
-            alt="e-moksha Logo"
+            alt="Qnext Logo"
           />
         </a>
         <button
@@ -44,7 +44,7 @@ export function Header() {
           <a className="text-xl text-black" href="/">
             <img
               src="/logo.svg"
-              className="mr-3 h-20 hidden sm:h-full"
+              className="mr-3  h-20 hidden sm:h-full"
               alt="e-moksha Logo"
             />
           </a>

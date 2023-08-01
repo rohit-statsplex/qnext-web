@@ -2,3 +2,5 @@ node_modules
 .next
 src/app/common/constants.tsx
 .DS_Store
+src/app/common/header.tsx
+src/app/common/header.tsx
