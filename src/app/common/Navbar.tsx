@@ -6,8 +6,8 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="hl  md:hidden">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 border-b-indigo-500">
+    <nav className="md:hidden">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 shadow">
         <div className="relative flex items-center justify-between h-28">
           <div className="flex-shrink-0 flex items-center">
             <Image

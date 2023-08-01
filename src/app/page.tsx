@@ -442,7 +442,7 @@ const HomeBody = () => {
         <div className="md:container m-auto">
           <div className="bg-polka pb-12">
             <div className="md:flex 2xl:ml-16 pt-0 2xl:pt-24 ">
-              <div className="p-8 md:p-0">
+              <div className="px-8 md:p-0">
                 <h1 className="whitespace-nowrap text-[40px]">
                   craft
                   <span className="italic pl-4">
@@ -452,7 +452,13 @@ const HomeBody = () => {
                 </h1>
               </div>
               <div className="ml-auto">
-                <Image src={"/video.svg"} alt={""} width={734} height={434}  className="px-8 py-4"/>
+                <Image
+                  src={"/video.svg"}
+                  alt={""}
+                  width={734}
+                  height={434}
+                  className="px-8 py-4"
+                />
               </div>
             </div>
           </div>
@@ -479,8 +485,8 @@ const HomeBody = () => {
 
       <section>
         {/* unleash the power */}
-        <div className="container m-auto md:py-20 md:px-4">
-          <div className="flex justify-around m-auto">
+        <div className="md:container m-auto px-6 md:py-20  md:px-4">
+          <div className="flex md:flex-row flex-col justify-around m-auto">
             <div className="left-p m-auto ">
               <Image
                 src={"/Infographic.png"}
@@ -490,13 +496,13 @@ const HomeBody = () => {
                 className=""
               />
             </div>
-            <div className="text-4xl right-p my-auto">
+            <div className="md:text-4xl right-p my-auto text-center py-4 md:py-0">
               <span>
                 unleash the power
                 <br />
                 of Generative AI <br />
                 <div className="md:ml-36">
-                  <span className="text-[32px] italic font-medium">
+                  <span className="md:text-[32px] italic font-medium">
                     for your
                     <br />
                     Newsletter
@@ -508,7 +514,7 @@ const HomeBody = () => {
                 alt={"background image"}
                 width={120}
                 height={120}
-                className="ml-auto md:pt-44"
+                className="md:ml-auto hidden md:block md:pt-44"
               />
             </div>
           </div>
@@ -516,16 +522,16 @@ const HomeBody = () => {
       </section>
 
       <section>
-        <div className="container m-auto pt-16">
-          <div className="text-4xl text-center font-mono">
+        <div className="md:container m-auto md:pt-16">
+          <div className="md:text-4xl text-xl text-center font-mono">
             What does Generative-AI do for your Newsletter?
           </div>
-          <div className="grid grid-cols-3 grid-rows-2 gap-2 justify-items-center p-12">
-            <div className="row-span-3">
-              <div className="text-2xl ">
+          <div className="grid md:grid-cols-3 grid-cols-2 hl md:grid-rows-2 md:gap-2 justify-items-center md:p-12">
+            <div className="md:row-span-3 col-span-2">
+              <div className="md:text-2xl ">
                 Cater to an audience
                 <br />
-                <div className="flex my-4">
+                <div className="flex md:my-4">
                   <Image
                     src={"/bullet2.png"}
                     alt="bullet point image"
@@ -535,9 +541,9 @@ const HomeBody = () => {
                   />
                   <span className="font-light whitespace-pre-wrap">
                     Speak to your <br /> audience directly by <br /> fine-tuning
-                    the <br /> language in-line with <br /> what your audience{" "}
+                    the <br /> language in-line with <br /> what your audience
                     <br /> likes and vibes with.
-                    <div className="my-4">
+                    <div className="md:my-4">
                       <span>
                         Change the 'tone' of
                         <br />
@@ -554,8 +560,8 @@ const HomeBody = () => {
                 </div>
               </div>
             </div>
-            <div className="">
-              <div className="text-2xl">
+            <div className="p-2 md:p-0">
+              <div className="md:text-2xl">
                 Geography specific content
                 <br />
                 <div className="flex my-4">
@@ -577,7 +583,7 @@ const HomeBody = () => {
               </div>
             </div>
             <div>
-              <div className="text-2xl ">
+              <div className="md:text-2xl p-2 md:p-0">
                 Hallucination elimination
                 <br />
                 <div className="flex my-4">
@@ -599,7 +605,7 @@ const HomeBody = () => {
               </div>
             </div>
             <div>
-              <div className="text-2xl ">
+              <div className="md:text-2xl ">
                 Automation
                 <br />
                 <div className="flex my-4">
@@ -621,7 +627,7 @@ const HomeBody = () => {
               </div>
             </div>
             <div>
-              <div className="text-2xl">
+              <div className="md:text-2xl">
                 Human in Loop
                 <br />
                 <div className="flex my-4">
@@ -654,7 +660,7 @@ const HomeBody = () => {
       </section>
       <section>
         <div className="container m-auto">
-          <div className="flex justify-between px-12 text-4xl">
+          <div className="flex justify-between md:px-12 md:text-4xl">
             <Image src={"/dot-grid.svg"} alt={""} width={120} height={120} />
             <span className="py-6">Generative-AI elements</span>
             <Image
@@ -685,12 +691,12 @@ const HomeBody = () => {
         <div className="container m-auto flex justify-center">
           <Image src={"/dot_separator.svg"} alt={""} width={1022} height={40} />
         </div>
-        <div className="container m-auto text-center text-4xl">
+        <div className="container m-auto text-center md:text-4xl">
           the future of Newsletters is here. where are you?
         </div>
       </section>
       <section className="">
-        <div className="text-center text-4xl pt-24 pb-12">pricing</div>
+        <div className="text-center md:text-4xl pt-24 pb-12">pricing</div>
         <div className=" grid gap-x-24 grid-cols-3 justify-items-center">
           {pricingData.map((ele, i) => (
             <HomePricing
@@ -705,7 +711,7 @@ const HomeBody = () => {
       </section>
 
       <section className="container">
-        <div className="pt-20 pl-20 text-4xl">Our Other Products</div>
+        <div className="md:pt-20 md:pl-20 md:text-4xl">Our Other Products</div>
         <div className="grid grid-cols-3 justify-items-center">
           {productData.map((ele, i) => (
             <HomeProducts
@@ -724,7 +730,7 @@ const HomeBody = () => {
         </div>
       </section>
 
-      <section className="p-8 container">
+      <section className="md:p-8 md:container">
         <div className="text-center text-4xl py-8">Twitter Feeds</div>
         <div className="bg-twitter py-8 px-48 overflow-auto h-[27rem] mx-16 rounded-2xl border-slate-200 border">
           <a
