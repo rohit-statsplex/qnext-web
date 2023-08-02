@@ -5,10 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { sendEmail } from "../lib/api.js";
 import { Loader2 } from "lucide-react";
+import Link from "next/link.js";
 
 export default function Home() {
   return (
@@ -43,9 +44,11 @@ const HomeHeader = () => {
     setShowDemoForm(false);
   };
   return (
-    <header>
-      <div className="flex justify-between">
-        <Image src="/logo.svg" alt="QNEXT.AI" width={150} height={150} />
+    <header className="sticky top-0 z-10 drop-shadow-lg">
+      <div className="flex justify-between bg-white">
+        <Link href={"/"}>
+          <Image src="/logo.svg" alt="QNEXT.AI" width={150} height={150} />
+        </Link>
         <div className="py-12 h-min mr-12">
           <nav>
             <ul className="flex gap-x-14 ">
@@ -417,6 +420,20 @@ const HomeBody = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    // Load the Twitter widget script on the client side
+    const script = document.createElement("script");
+    script.src = "https://platform.twitter.com/widgets.js";
+    script.async = true;
+    script.charset = "utf-8";
+    document.body.appendChild(script);
+
+    return () => {
+      // Clean up the script when the component unmounts
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const handleSignUpClick = () => {
     setShowSignUpForm(true);
   };
@@ -770,7 +787,6 @@ const HomeBody = () => {
           >
             Tweets by QNext_ai
           </a>
-          <script async src="https://platform.twitter.com/widgets.js"></script>
         </div>
       </section>
       <footer>

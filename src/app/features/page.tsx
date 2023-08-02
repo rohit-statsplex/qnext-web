@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { sendEmail } from "@/lib/api";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -42,9 +43,11 @@ const HomeHeader = () => {
     setShowDemoForm(false);
   };
   return (
-    <header>
-      <div className="flex justify-between">
-        <Image src="/logo.svg" alt="QNEXT.AI" width={150} height={150} />
+    <header className="sticky top-0 z-10 drop-shadow-lg">
+      <div className="flex justify-between bg-white">
+        <Link href={"/"}>
+          <Image src="/logo.svg" alt="QNEXT.AI" width={150} height={150} />
+        </Link>
         <div className="py-12 h-min mr-12">
           <nav>
             <ul className="flex gap-x-14 ">
