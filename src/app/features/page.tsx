@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { sendEmail } from "@/lib/api";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -42,12 +43,14 @@ const HomeHeader = () => {
     setShowDemoForm(false);
   };
   return (
-    <header>
-      <div className="flex justify-between">
-        <Image src="/logo.svg" alt="QNEXT.AI" width={150} height={150} />
-        <div className="py-12 h-min mr-12">
+    <header className="sticky top-0 z-10 drop-shadow-lg">
+      <div className="md:flex justify-between hidden bg-white">
+        <Link href={"/"}>
+          <Image src="/logo.svg" alt="QNEXT.AI" width={150} height={150} />
+        </Link>
+        <div className="py-12 h-min 2xl:mr-12">
           <nav>
-            <ul className="flex gap-x-14 ">
+            <ul className="flex 2xl:gap-x-14 mr-4">
               <li>
                 <a href="/">
                   <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
@@ -121,7 +124,6 @@ const HomeHeader = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 ></Input>
               </div>
-
               <div className="flex">
                 <div className="relative top-6 text-2xl font-semibold  mr-12">
                   Message
@@ -132,7 +134,6 @@ const HomeHeader = () => {
                 ></Textarea>
               </div>
             </form>
-
             <Button
               type="submit"
               className="w-48 whitespace-nowrap my-4 text-xl"
@@ -211,7 +212,9 @@ const HomeBody = () => {
             Let's talk about what you can do!
             <div className="text-2xl font-bold">
               <div className="flex p-8">
-                <div className="left-p">Quiz</div>
+                <div className="left-p" id="quiz">
+                  Quiz
+                </div>
                 <div className="right-p">
                   <div className="font-light mx-28">
                     Serve quizzes created
@@ -255,7 +258,7 @@ const HomeBody = () => {
       </section>
 
       <section className="container py-8 m-auto">
-        <h2 className="text-2xl flex font-bold px-16">
+        <h2 className="text-2xl flex font-bold px-16" id="summary">
           Summary
           <div className="text-2xl font-light max-w-[344px] mx-28">
             Summarise an entire article or a group of articles into one neat
@@ -294,7 +297,7 @@ const HomeBody = () => {
       </section>
 
       <section className="m-auto container">
-        <h2 className="text-2xl flex font-bold m-auto px-16">
+        <h2 className="text-2xl flex font-bold m-auto px-16" id="cliffhanger">
           Cliffhanger
           <div className="text-2xl mx-28 max-w-[344px] font-light">
             Keep your audience hanging by every word with these intense
@@ -320,7 +323,7 @@ const HomeBody = () => {
       </section>
 
       <section className="m-auto container py-8">
-        <h2 className=" text-2xl flex font-bold">
+        <h2 className=" text-2xl flex font-bold" id="sos">
           Summary of Summaries
           <div className="text-2xl mx-28 font-light max-w-[344px]">
             Form an overall summary from different summaries of articles.

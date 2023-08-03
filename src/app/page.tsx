@@ -4,10 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Navbar } from "./common/Navbar";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { sendEmail } from "../lib/api.js";
 import { Loader2 } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -42,10 +43,27 @@ const HomeHeader = () => {
     setLoading(false);
     setShowDemoForm(false);
   };
+
+  useEffect(() => {
+    // Load the Twitter widget script on the client side
+    const script = document.createElement("script");
+    script.src = "https://platform.twitter.com/widgets.js";
+    script.async = true;
+    script.charset = "utf-8";
+    document.body.appendChild(script);
+
+    return () => {
+      // Clean up the script when the component unmounts
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
-    <header>
-      <div className="md:flex justify-between hidden">
-        <Image src="/logo.svg" alt="QNEXT.AI" width={150} height={150} />
+    <header className="sticky top-0 z-10 drop-shadow-lg">
+      <div className="md:flex justify-between hidden bg-white">
+        <Link href={"/"}>
+          <Image src="/logo.svg" alt="QNEXT.AI" width={150} height={150} />
+        </Link>
         <div className="py-12 h-min 2xl:mr-12">
           <nav>
             <ul className="flex 2xl:gap-x-14 mr-4">
@@ -64,9 +82,11 @@ const HomeHeader = () => {
                 </a>
               </li>
               <li>
-                <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
-                  Our Newsletter
-                </Button>
+                <a href="/news-letter">
+                  <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
+                    Our Newsletter
+                  </Button>
+                </a>
               </li>
               <li>
                 <Button
@@ -155,6 +175,7 @@ interface elementsProps {
   title: string;
   description: string;
   points?: string[];
+  link: string;
 }
 
 interface productsProps {
@@ -198,11 +219,13 @@ const elementsData = [
       "Increases engagement\ndrastically.",
       "Serves as a proxy\nsurvey/feedback from\nusers",
     ],
+    link: "#quiz",
   },
   {
     title: "Cliffhanger",
     description:
       "Keep your audience\nhanging by every word\nwith these intense\ncliffhangers generated\nout of your articles.",
+    link: "#cliffhanger",
   },
   {
     title: "Summary",
@@ -212,11 +235,13 @@ const elementsData = [
       "To the point, concise\ncontent values the\ntime of the reader.",
       "Increases engagement.",
     ],
+    link: "#summary",
   },
   {
     title: "Summary of summaries",
     description:
       "Summarise a bunch of\nsummaries together to\nget an overall gist of\nwhat is happening in\nthe Newsletter.",
+    link: "#sos",
   },
 ];
 
@@ -296,17 +321,26 @@ const HomeGAIElements = ({
   description,
   points,
   index,
+  link,
 }: elementsProps) => {
   return (
     <div style={{ gridArea: `item${index}` }}>
-      <h2
-        className={`relative ${
-          index === 3 ? "-top-32" : "top-0"
-        }   text-2xl border-2 rounded-xl whitespace-nowrap px-6 flex justify-center mx-auto w-min font-medium`}
-      >
-        {title}
-        <Image src={"/arrow-top-right.svg"} alt={"↗"} width={24} height={24} />
-      </h2>
+      <Link href={"/features" + link}>
+        <h2
+          className={`relative ${
+            index === 3 ? "-top-32" : "top-0"
+          }   text-2xl border-2 rounded-xl whitespace-nowrap px-6 flex justify-center mx-auto w-min font-medium`}
+        >
+          {title}
+          <Image
+            src={"/arrow-top-right.svg"}
+            alt={"↗"}
+            width={24}
+            height={24}
+          />
+        </h2>
+      </Link>
+
       <div
         className={`relative ${
           index === 3 ? "-top-32" : "top-0"
@@ -520,6 +554,29 @@ const HomeBody = () => {
               />
             </div>
           </div>
+          <a
+            href="#"
+            // onclick="topFunction()"
+            id="back-to-top"
+            className="back-to-top rounded-2xl bg-[#D9D9D9] w-min h-min p-4"
+            style={{ display: "block" }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              className="feather feather-arrow-up fea icon-sm icons align-middle"
+            >
+              <line x1="12" y1="19" x2="12" y2="5"></line>
+              <polyline points="5 12 12 5 19 12"></polyline>
+            </svg>
+          </a>
         </div>
       </section>
 
@@ -686,6 +743,7 @@ const HomeBody = () => {
                 title={ele.title}
                 description={ele.description}
                 points={ele.points}
+                link={ele.link}
               />
             ))}
           </div>
@@ -743,7 +801,6 @@ const HomeBody = () => {
           >
             Tweets by QNext_ai
           </a>
-          <script async src="https://platform.twitter.com/widgets.js"></script>
         </div>
       </section>
       <footer>

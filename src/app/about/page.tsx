@@ -7,7 +7,6 @@ import { sendEmail } from "@/lib/api";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { useState } from "react";
 
 export default function Features() {
@@ -149,66 +148,13 @@ const HomeHeader = () => {
   );
 };
 
-interface pricingProps {
-  tier: string;
-  cost: string;
-  description: string;
-  points?: string[];
-}
-
-const pricingData = [
-  {
-    tier: "simple",
-    cost: "Free",
-    description: "All the\nfeatures.",
-    points: ["Summaries", "Quizzes", "Cliffhangers", "Summary of\nSummaries"],
-  },
-  {
-    tier: "connected",
-    cost: "15$/month",
-    description:
-      "Additionally,\nthe Newsletter\nBuilder will be\nlinked to your\nCMS",
-  },
-  {
-    tier: "enterprise",
-    cost: "Custom",
-    description: "Customization\nOptions\n\nhuman in loop\nmonitor",
-  },
-];
-const HomePricing = ({ tier, cost, description, points }: pricingProps) => {
-  return (
-    <div className=" bg-[#F2F7F2] px-14 py-8 rounded-[36px] border-black border-solid border-2 w-[298px] h-[424px]">
-      <div className="relative -left-8 flex justify-center text-2xl font-light">
-        <Image
-          src={"/bullet.svg"}
-          alt={""}
-          width={34}
-          height={34}
-          className="mx-6"
-        />
-        {tier}
-      </div>
-      <div className="text-4xl flex justify-center my-4">{cost}</div>
-      <div className="relative text-xl my-6 font-light">you get:</div>
-      <div className="relative text-xl whitespace-pre-wrap font-light">
-        {description}
-        {points && (
-          <ul className="pl-8 list-disc list-outside whitespace-pre-wrap">
-            {points.map((ele, i) => (
-              <li key={i}>{ele}</li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </div>
-  );
-};
 const HomeBody = () => {
   return (
     <>
-      <section className="m-auto container py-8 h-screen">
+      <section className="m-auto container py-8 h-screen bg-[]">
         <div className="text-center">COMING SOONER THAN IMAGINED!</div>
       </section>
+
       <footer>
         <div className="py-16 flex justify-around">
           <a href="/about">About Us</a>
