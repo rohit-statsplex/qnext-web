@@ -330,7 +330,7 @@ const HomeBody = () => {
           </div>
         </h2>
         <div className="flex justify-between py-16">
-          <div className="max-w-[354px] italic">
+          <div className="text-2xl max-w-[354px] text italic">
             Amalgamate and synthesize multiple summaries into a cohesive and
             comprehensive overview. You can input various summaries from
             different sources, our tool intelligently merges them, eliminating
