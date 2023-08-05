@@ -66,7 +66,7 @@ const HomeHeader = () => {
       <header className="sticky top-0 z-10 drop-shadow-lg">
         <div className="md:flex justify-between hidden bg-white">
           <Link href={"/"}>
-            <Image src="/logo.svg" alt="QNEXT.AI" width={150} height={150} />
+            <Image src="/logo2.png" alt="QNEXT.AI" width={120} height={120} />
           </Link>
           <div className="py-12 h-min 2xl:mr-12">
             <nav>
@@ -300,11 +300,11 @@ const productData = [
 
 const HomeExpandables = ({ title, description, index }: expandablesProps) => {
   // const [isExpanded, setIsExpanded] = useState(false);
-  const [animatedProps, api] = useSpring(() => ({
-    from: {
-      width: 100,
-    },
-  }));
+  // const [animatedProps, api] = useSpring(() => ({
+  //   from: {
+  //     width: 100,
+  //   },
+  // }));
 
   return (
     <div style={{ gridArea: `item${index}` }}>
@@ -322,7 +322,7 @@ const HomeExpandables = ({ title, description, index }: expandablesProps) => {
         />
         <animated.div
           className="whitespace-pre-wrap text-2xl my-2 h-min"
-          style={animatedProps}
+          // style={animatedProps}
         >
           {description}
         </animated.div>
@@ -502,13 +502,17 @@ const HomeBody = () => {
         <div className="md:container m-auto">
           <div className="bg-polka pb-12">
             <div className="md:flex 2xl:ml-16 pt-0 2xl:pt-24 ">
-              <div className="px-8 md:px-8 text-center md:text-inherit">
+              <div className="px-12 md:px-12 text-center md:text-inherit">
                 <h1 className="whitespace-nowrap md:text-[40px]">
                   craft
                   <span className="italic pl-4">
                     <b>disruptive</b> <br />
                   </span>
-                  newsletters <br /> effortlessly
+                  <p className="text-left">
+                    newsletters
+                    <br />
+                    effortlessly
+                  </p>
                 </h1>
               </div>
               <div className="ml-auto">
@@ -528,8 +532,8 @@ const HomeBody = () => {
       <section>
         <div className="container m-auto">
           <div
-            className="md:grid mx-auto hidden"
-            style={{ gridTemplateAreas: "'item0 item1 .' '. item2 item3'" }}
+            className="md:grid mx-auto hidden gap-10"
+            style={{ gridTemplateAreas: "'item0 item1' 'item2 item3'" }}
           >
             {expandlesData.map((ele, i) => (
               <HomeExpandables
@@ -580,29 +584,31 @@ const HomeBody = () => {
               />
             </div>
           </div>
-          <a
-            href="#"
-            // onclick="topFunction()"
-            id="back-to-top"
-            className="relative left-[80rem] -top-32 back-to-top rounded-2xl bg-[#D9D9D9] w-min h-min p-4"
-            style={{ display: "block" }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              className="feather feather-arrow-up fea icon-sm icons align-middle"
+          <div className="fixed left-3/4 bottom-1/4 z-10">
+            <a
+              href="#"
+              // onclick="topFunction()"
+              id="back-to-top"
+              className="back-to-top rounded-2xl bg-[#D9D9D9] w-min h-min p-4"
+              style={{ display: "block" }}
             >
-              <line x1="12" y1="19" x2="12" y2="5"></line>
-              <polyline points="5 12 12 5 19 12"></polyline>
-            </svg>
-          </a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="feather feather-arrow-up fea icon-sm icons align-middle"
+              >
+                <line x1="12" y1="19" x2="12" y2="5"></line>
+                <polyline points="5 12 12 5 19 12"></polyline>
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -611,7 +617,10 @@ const HomeBody = () => {
           <div className="md:text-4xl text-xl text-center font-mono p-4 md:p-0">
             What does Generative-AI do for your Newsletter?
           </div>
-          <div className="grid md:grid-cols-3 md:grid-rows-2 md:gap-2 justify-items-center md:p-12">
+          <div
+            className="grid md:grid-cols-3 md:grid-rows-2 md:gap-2 justify-items-center md:p-12"
+            style={{ gridTemplateRows: "0.9fr" }}
+          >
             <div className="md:row-span-3 md:col-span-1 col-span-2">
               <div className="md:text-2xl ">
                 Cater to an audience
@@ -622,13 +631,17 @@ const HomeBody = () => {
                     alt="bullet point image"
                     width={20}
                     height={20}
-                    className="h-min md:block relative top-2 right-2 hidden"
+                    className="h-min md:block relative left-0.5 top-2 right-2 hidden"
                   />
-                  <span className="font-light whitespace-pre-wrap">
-                    Speak to your <br /> audience directly by <br /> fine-tuning
-                    the <br /> language in-line with <br /> what your audience
-                    <br /> likes and vibes with.
-                    <div className="my-4">
+                  <span className="font-light whitespace-pre-wrap md:px-4 md:p-initial">
+                    Speak to your <br />
+                    audience directly by <br />
+                    fine-tuning the <br />
+                    language in-line with <br />
+                    what your audience
+                    <br />
+                    likes and vibes with.
+                    <div className="my-4 relative -left-8">
                       <span>
                         Change the 'tone' of
                         <br />
@@ -645,7 +658,7 @@ const HomeBody = () => {
                 </div>
               </div>
             </div>
-            <div className="p-2 md:p-0 md:row-span-3 md:col-span-1 col-span-2">
+            <div className="p-2 md:p-0 md:col-span-1 col-span-2">
               <div className="md:text-2xl">
                 Geography specific content
                 <br />
@@ -655,9 +668,9 @@ const HomeBody = () => {
                     alt=""
                     width={20}
                     height={20}
-                    className="h-min relative md:top-2 top-4 md:right-2 md:block hidden"
+                    className="h-min relative md:top-2 p-0 left-0.5 top-4 md:right-2 md:block hidden"
                   />
-                  <span className="font-light whitespace-pre-wrap md:p-2 md:p-initial">
+                  <span className="font-light whitespace-pre-wrap md:px-4 md:p-initial">
                     Cater to local tastes
                     <br />
                     by targeting according
@@ -667,7 +680,7 @@ const HomeBody = () => {
                 </div>
               </div>
             </div>
-            <div className="p-2 md:p-0 md:row-span-3 md:col-span-1 col-span-2">
+            <div className="p-2 md:p-0 md:col-span-1 col-span-2">
               <div className="md:text-2xl px-16 md:px-0">
                 Hallucination elimination
                 <br />
@@ -677,9 +690,9 @@ const HomeBody = () => {
                     alt=""
                     width={20}
                     height={20}
-                    className="h-min relative top-2 right-2 md:block hidden "
+                    className="h-min relative p-0 left-0.5 top-2 right-2 md:block hidden "
                   />
-                  <span className="font-light whitespace-pre-wrap">
+                  <span className="font-light whitespace-pre-wrap md:px-4 md:p-initial">
                     No hallucinations in
                     <br />
                     the Generative AI
@@ -699,9 +712,9 @@ const HomeBody = () => {
                     alt=""
                     width={20}
                     height={20}
-                    className="h-min relative top-2 right-2 md:block hidden "
+                    className="h-min relative p-0 left-0.5 top-2 right-2 md:block hidden "
                   />
-                  <span className="font-light whitespace-pre-wrap">
+                  <span className="font-light whitespace-pre-wrap md:px-4 md:p-initial">
                     All the functions
                     <br />
                     happen with a press of
@@ -711,7 +724,7 @@ const HomeBody = () => {
                 </div>
               </div>
             </div>
-            <div className="md:text-2xl p-2 md:p-0 md:row-span-3 md:col-span-1 col-span-2">
+            <div className="md:text-2xl relative left-1.5 p-2 md:p-0 md:row-span-3 md:col-span-1 col-span-2">
               <div className=" px-16 md:px-0">
                 Human in Loop
                 <br />
@@ -721,9 +734,9 @@ const HomeBody = () => {
                     alt=""
                     width={20}
                     height={20}
-                    className="h-min relative top-2 right-2 md:block hidden "
+                    className="h-min relative p-0 left-0.5 top-2 right-2 md:block hidden "
                   />
-                  <span className="font-light whitespace-pre-wrap">
+                  <span className="font-light whitespace-pre-wrap md:px-4 md:p-initial">
                     Editor mode allows a<br />
                     human being to make
                     <br />

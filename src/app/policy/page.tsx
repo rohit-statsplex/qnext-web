@@ -85,7 +85,7 @@ const PageHeader = () => {
     <header className="sticky top-0 z-10 drop-shadow-lg">
       <div className="flex justify-between bg-white">
         <Link href={"/"}>
-          <Image src="/logo.svg" alt="QNEXT.AI" width={150} height={150} />
+          <Image src="/logo2.png" alt="QNEXT.AI" width={120} height={120} />
         </Link>
         <div className="py-12 h-min mr-12">
           <nav>
