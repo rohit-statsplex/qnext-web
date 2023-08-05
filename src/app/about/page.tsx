@@ -8,6 +8,7 @@ import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import * as EmailValidator from "email-validator";
 
 export default function Features() {
   return (
@@ -28,6 +29,8 @@ const HomeHeader = () => {
     setShowDemoForm(true);
   };
 
+  const isValidEmail = EmailValidator.validate(email);
+
   const handleFormSubmit = async (e: { preventDefault: () => void }) => {
     setLoading(true);
     e.preventDefault();
@@ -42,47 +45,49 @@ const HomeHeader = () => {
     setShowDemoForm(false);
   };
   return (
-    <header className="sticky top-0 z-10 drop-shadow-lg">
-      <div className="md:flex justify-between hidden bg-white">
-        <Link href={"/"}>
-          <Image src="/logo2.png" alt="QNEXT.AI" width={120} height={120} />
-        </Link>
-        <div className="py-12 h-min 2xl:mr-12">
-          <nav>
-            <ul className="flex 2xl:gap-x-14 mr-4">
-              <li>
-                <a href="/">
-                  <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
-                    Home
+    <>
+      <header className="sticky top-0 z-10 drop-shadow-lg">
+        <div className="md:flex justify-between hidden bg-white">
+          <Link href={"/"}>
+            <Image src="/logo2.png" alt="QNEXT.AI" width={120} height={120} />
+          </Link>
+          <div className="py-12 h-min 2xl:mr-12">
+            <nav>
+              <ul className="flex 2xl:gap-x-14 mr-4">
+                <li>
+                  <a href="/">
+                    <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
+                      Home
+                    </Button>
+                  </a>
+                </li>
+                <li>
+                  <a href="/features">
+                    <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
+                      Features
+                    </Button>
+                  </a>
+                </li>
+                <li>
+                  <a href="/news-letter">
+                    <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
+                      Our Newsletter
+                    </Button>
+                  </a>
+                </li>
+                <li>
+                  <Button
+                    className="w-48 whitespace-nowrap text-xl"
+                    onClick={handleDemoClick}
+                  >
+                    Get a Demo
                   </Button>
-                </a>
-              </li>
-              <li>
-                <a href="/features">
-                  <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
-                    Features
-                  </Button>
-                </a>
-              </li>
-              <li>
-                <a href="/news-letter">
-                  <Button className="whitespace-nowrap bg-transparent text-black text-xl hover:bg-[#E9582580] focus:bg-[#E9582580]">
-                    Our Newsletter
-                  </Button>
-                </a>
-              </li>
-              <li>
-                <Button
-                  className="w-48 whitespace-nowrap text-xl"
-                  onClick={handleDemoClick}
-                >
-                  Get a Demo
-                </Button>
-              </li>
-            </ul>
-          </nav>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-      </div>
+      </header>
       {showDemoForm && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-10 rounded-lg h-[37.5rem] w-[52rem] grid justify-items-center relative">
@@ -123,6 +128,11 @@ const HomeHeader = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 ></Input>
               </div>
+              {email !== "" && !isValidEmail && (
+                <p className="text-red-500 -mt-4 relative text-center">
+                  Please enter a valid email address.
+                </p>
+              )}
               <div className="flex">
                 <div className="relative top-6 text-2xl font-semibold  mr-12">
                   Message
@@ -135,7 +145,11 @@ const HomeHeader = () => {
             </form>
             <Button
               type="submit"
-              className="w-48 whitespace-nowrap my-4 text-xl"
+              className={`w-48 whitespace-nowrap my-4 text-xl mt-4 ${
+                isValidEmail
+                  ? "cursor-pointer"
+                  : "cursor-not-allowed opacity-50"
+              }`}
               disabled={loading}
               onClick={handleFormSubmit}
             >
@@ -144,7 +158,7 @@ const HomeHeader = () => {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 };
 
