@@ -253,9 +253,9 @@ const elementsData = [
     link: "#summary",
   },
   {
-    title: "Summary of summaries",
+    title: "Summary of Summaries",
     description:
-      "Summarise a bunch of\nsummaries together to\nget an overall gist of\nwhat is happening in\nthe Newsletter.",
+      "Summarise a bunch of\nsummaries together to\npresent overall gist\nof what is happening\nin the Newsletter.",
     link: "#sos",
   },
 ];
@@ -682,7 +682,7 @@ const HomeBody = () => {
             </div>
             <div className="p-2 md:p-0 md:col-span-1 col-span-2">
               <div className="md:text-2xl px-16 md:px-0">
-                Hallucination elimination
+                Hallucinations
                 <br />
                 <div className="flex md:my-4">
                   <Image
@@ -693,18 +693,17 @@ const HomeBody = () => {
                     className="h-min relative p-0 left-0.5 top-2 right-2 md:block hidden "
                   />
                   <span className="font-light whitespace-pre-wrap md:px-4 md:p-initial">
-                    No hallucinations in
-                    <br />
-                    the Generative AI
-                    <br />
-                    content.
+                    Multiple measures are put in place to mitigate
+                    hallucination. Automated detection and human in loop are
+                    incorporated in the workflow to filter out any undesirable
+                    content before it is published.
                   </span>
                 </div>
               </div>
             </div>
             <div className="p-2 md:p-0 md:row-span-3 md:col-span-1 col-span-2">
               <div className="md:text-2xl px-16 md:px-0">
-                Automation
+                Automations
                 <br />
                 <div className="flex md:my-4">
                   <Image
@@ -717,7 +716,7 @@ const HomeBody = () => {
                   <span className="font-light whitespace-pre-wrap md:px-4 md:p-initial">
                     All the functions
                     <br />
-                    happen with a press of
+                    happen with a push of
                     <br />a button and you can generate the Newsletter
                     automatically.
                   </span>
