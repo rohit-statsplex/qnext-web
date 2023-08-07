@@ -9,7 +9,7 @@ const ibmPlexMono = IBM_Plex_Mono({
   variable: "--font-ibm",
 });
 export const metadata = {
-  title: "QNext | AI",
+  title: "QNext.AI",
   description: "QNext.AI",
 };
 

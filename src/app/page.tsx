@@ -584,7 +584,7 @@ const HomeBody = () => {
               />
             </div>
           </div>
-          <div className="fixed left-3/4 bottom-1/4 z-10">
+          <div className="fixed bottom-10 right-12 z-10 group">
             <a
               href="#"
               // onclick="topFunction()"
@@ -608,6 +608,9 @@ const HomeBody = () => {
                 <polyline points="5 12 12 5 19 12"></polyline>
               </svg>
             </a>
+            <div className="hidden group-hover:block absolute -top-10 -left-44 bg-[#757575] p-4 rounded-2xl text-white text-xl whitespace-nowrap">
+              Scroll to Top
+            </div>
           </div>
         </div>
       </section>
@@ -627,7 +630,7 @@ const HomeBody = () => {
                 <br />
                 <div className="flex md:my-4">
                   <Image
-                    src={"/bullet2.png"}
+                    src={"/bullet2.svg"}
                     alt="bullet point image"
                     width={20}
                     height={20}
@@ -664,8 +667,8 @@ const HomeBody = () => {
                 <br />
                 <div className="flex md:my-4">
                   <Image
-                    src={"/bullet2.png"}
-                    alt=""
+                    src={"/bullet2.svg"}
+                    alt="bullet point image"
                     width={20}
                     height={20}
                     className="h-min relative md:top-2 p-0 left-0.5 top-4 md:right-2 md:block hidden"
@@ -686,8 +689,8 @@ const HomeBody = () => {
                 <br />
                 <div className="flex md:my-4">
                   <Image
-                    src={"/bullet2.png"}
-                    alt=""
+                    src={"/bullet2.svg"}
+                    alt="bullet point image"
                     width={20}
                     height={20}
                     className="h-min relative p-0 left-0.5 top-2 right-2 md:block hidden "
@@ -707,8 +710,8 @@ const HomeBody = () => {
                 <br />
                 <div className="flex md:my-4">
                   <Image
-                    src={"/bullet2.png"}
-                    alt=""
+                    src={"/bullet2.svg"}
+                    alt="bullet point image"
                     width={20}
                     height={20}
                     className="h-min relative p-0 left-0.5 top-2 right-2 md:block hidden "
@@ -729,8 +732,8 @@ const HomeBody = () => {
                 <br />
                 <div className="flex md:my-4">
                   <Image
-                    src={"/bullet2.png"}
-                    alt=""
+                    src={"/bullet2.svg"}
+                    alt="bullet point image"
                     width={20}
                     height={20}
                     className="h-min relative p-0 left-0.5 top-2 right-2 md:block hidden "
